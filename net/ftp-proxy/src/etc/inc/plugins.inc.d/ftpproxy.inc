@@ -28,7 +28,7 @@
 
 function ftpproxy_enabled()
 {
-    $model = new \OPNsense\FtpProxy\FtpProxy();
+    $model = new \HWasly\FtpProxy\FtpProxy();
 
     foreach ($model->ftpproxy->iterateItems() as $server) {
         if ($server->enabled == '1') {

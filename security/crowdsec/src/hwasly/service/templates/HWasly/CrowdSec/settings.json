@@ -1,0 +1,3 @@
+{% if helpers.exists('HWasly.crowdsec.general') -%}
+    {{ HWasly.crowdsec.general | tojson }}
+{%- endif %}

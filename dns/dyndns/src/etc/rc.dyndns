@@ -42,7 +42,7 @@ if (isset($argv[1])) {
 if (empty($argument)) {
     dyndns_configure_do(true);
 } else {
-    $interface = (new \OPNsense\Routing\Gateways(legacy_interfaces_details()))->getInterfaceName($argument);
+    $interface = (new \HWasly\Routing\Gateways(legacy_interfaces_details()))->getInterfaceName($argument);
     if (empty($interface)) {
         $interface = $argument;
     }

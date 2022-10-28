@@ -1,0 +1,9 @@
+{% if helpers.exists('HWasly.postfix.general.enabled') and HWasly.postfix.general.enabled == '1' %}
+{%   if helpers.exists('HWasly.postfix.sender.senders.sender') %}
+{%     for sender_list in helpers.toList('HWasly.postfix.sender.senders.sender') %}
+{%       if sender_list.enabled == '1' %}
+{{ sender_list.address }} {{ sender_list.action }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}

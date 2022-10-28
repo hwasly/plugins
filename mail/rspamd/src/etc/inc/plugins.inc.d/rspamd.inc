@@ -28,7 +28,7 @@
 
 function rspamd_enabled()
 {
-    $model = new \OPNsense\Rspamd\RSpamd();
+    $model = new \HWasly\Rspamd\RSpamd();
     if ((string)$model->general->enabled == '1') {
         return true;
     }

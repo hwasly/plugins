@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.collectd.general.enabled') and HWasly.collectd.general.enabled == '1' %}
+collectd_setup="/usr/local/hwasly/scripts/HWasly/Collectd/setup.sh"
+collectd_enable="YES"
+{% else %}
+collectd_enable="NO"
+{% endif %}

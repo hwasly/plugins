@@ -32,7 +32,7 @@ function muninnode_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['muninnode']['general']['enabled']) && $config['OPNsense']['muninnode']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['muninnode']['general']['enabled']) && $config['HWasly']['muninnode']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('muninnode daemon'),
             'configd' => array(

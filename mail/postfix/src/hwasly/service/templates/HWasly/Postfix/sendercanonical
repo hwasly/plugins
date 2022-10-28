@@ -1,0 +1,9 @@
+{% if helpers.exists('HWasly.postfix.general.enabled') and HWasly.postfix.general.enabled == '1' %}
+{%   if helpers.exists('HWasly.postfix.sendercanonical.sendercanonicals.sendercanonical') %}
+{%     for sendercanonical in helpers.toList('HWasly.postfix.sendercanonical.sendercanonicals.sendercanonical') %}
+{%       if sendercanonical.enabled == '1' %}
+{{ sendercanonical.from }} {{ sendercanonical.to }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}

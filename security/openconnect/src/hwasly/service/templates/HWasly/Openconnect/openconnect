@@ -1,0 +1,12 @@
+{% if helpers.exists('HWasly.openconnect.general.enabled') and HWasly.openconnect.general.enabled == '1' %}
+openconnect_enable="YES"
+{%   if helpers.exists('HWasly.openconnect.general.server') and HWasly.openconnect.general.server != '' %}
+{%     if helpers.exists('HWasly.openconnect.general.user') and HWasly.openconnect.general.user != '' %}
+{%       if helpers.exists('HWasly.openconnect.general.password') and HWasly.openconnect.general.password != '' %}
+openconnect_flags="--config=/usr/local/etc/openconnect.conf {{ HWasly.openconnect.general.server }}"
+{%       endif %}
+{%     endif %}
+{%   endif %}
+{% else %}
+openconnect_enable="NO"
+{% endif %}

@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: hwasly-tincd
+# REQUIRE: SERVERS
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=ostincd
+
+stop_cmd=ostincd_stop
+start_cmd=ostincd_start
+rcvar=ostincd_enable
+
+load_rc_config hwasly-tincd
+
+[ -z "$ostincd_enable" ] && ostincd_enable="NO"
+
+# stop tincd
+ostincd_stop()
+{
+	echo "stopping tincd"
+	/usr/local/hwasly/scripts/HWasly/Tinc/tincd.py stop
+}
+
+# start tincd
+ostincd_start()
+{
+	echo "starting tincd"
+	/usr/local/hwasly/scripts/HWasly/Tinc/tincd.py start
+}
+
+run_rc_command $1

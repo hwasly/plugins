@@ -1,0 +1,22 @@
+{% if helpers.exists('HWasly.wireguard.general.enabled') and HWasly.wireguard.general.enabled == '1' %}
+wireguard_setup="/usr/local/hwasly/scripts/HWasly/Wireguard/setup.sh"
+wireguard_enable="YES"
+{%   if helpers.exists('HWasly.wireguard.server.servers.server') %}
+{%   set activeservers=[] %}
+{%     for servers in helpers.toList('HWasly.wireguard.server.servers.server') %}
+{%       if servers.enabled == '1' %}
+{%       do activeservers.append("wg" + servers.instance) %}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+wireguard_interfaces="{{ activeservers | join(' ') }}"
+start_postcmd=hwasly_postcmd
+hwasly_postcmd()
+{
+	for interface in ${wireguard_interfaces}; do
+		ifconfig ${interface} group wireguard
+	done
+}
+{% else %}
+wireguard_enable="NO"
+{% endif %}

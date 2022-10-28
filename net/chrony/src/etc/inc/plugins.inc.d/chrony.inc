@@ -32,7 +32,7 @@ function chrony_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['chrony']['general']['enabled']) && $config['OPNsense']['chrony']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['chrony']['general']['enabled']) && $config['HWasly']['chrony']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('chrony daemon'),
             'configd' => array(

@@ -30,7 +30,7 @@
 function ddclient_services()
 {
     $services = [];
-    $mdl = new \OPNsense\DynDNS\DynDNS();
+    $mdl = new \HWasly\DynDNS\DynDNS();
     if ($mdl->general->enabled == '1') {
         $services[] = [
             'description' => gettext('ddclient'),
@@ -51,7 +51,7 @@ function ddclient_xmlrpc_sync()
     $result = array();
     $result[] = array(
         'description' => gettext('ddclient'),
-        'section' => 'OPNsense.DynDNS',
+        'section' => 'HWasly.DynDNS',
         'id' => 'ddclient',
         'services' => ['ddclient'],
     );

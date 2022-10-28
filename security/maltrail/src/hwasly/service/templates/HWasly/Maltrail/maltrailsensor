@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.maltrail.sensor.enabled') and HWasly.maltrail.sensor.enabled == '1' %}
+maltrailsensor_setup="/usr/local/hwasly/scripts/HWasly/Maltrail/setup.sh"
+maltrailsensor_enable="YES"
+{% else %}
+maltrailsensor_enable="NO"
+{% endif %}

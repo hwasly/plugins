@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.muninnode.general.enabled') and HWasly.muninnode.general.enabled == '1' %}
+munin_node_setup="/usr/local/hwasly/scripts/HWasly/Muninnode/setup.sh"
+munin_node_enable="YES"
+{% else %}
+munin_node_enable="NO"
+{% endif %}

@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.redis.general.enabled') and HWasly.redis.general.enabled == '1' %}
+redis_setup="/usr/local/hwasly/scripts/redis/setup.sh"
+redis_enable="YES"
+{% else %}
+redis_enable="NO"
+{% endif %}

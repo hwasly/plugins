@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.tor.general.enabled') and HWasly.tor.general.enabled == '1' %}
+tor_setup="/usr/local/hwasly/scripts/tor/setup.sh"
+tor_enable="YES"
+{% else %}
+tor_enable="NO"
+{% endif %}

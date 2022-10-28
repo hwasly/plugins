@@ -28,7 +28,7 @@
 
 function vnstat_enabled()
 {
-    $model = new \OPNsense\Vnstat\General();
+    $model = new \HWasly\Vnstat\General();
     return (string)$model->enabled == '1';
 }
 

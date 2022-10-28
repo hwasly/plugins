@@ -7,14 +7,14 @@ With growing risks the need to fortify our security is growing for both big ente
 out of reach for the latter.
 An important extra security addition is an Intrusion Detection and Prevention System (IDS/IPS).
 
-The IDS/IPS available in OPNsense is based on Suricata.
-This open source IDS/IPS engine has proven its value in OPNsense, especially in combination with the free Proofpoint ETOpen ruleset.
+The IDS/IPS available in HWasly is based on Suricata.
+This open source IDS/IPS engine has proven its value in HWasly, especially in combination with the free Proofpoint ETOpen ruleset.
 
 The need for valuable threat detection data and the increasing importance of additional network security
-has brought Proofpoint and OPNsense together.
+has brought Proofpoint and HWasly together.
 Our joined efforts resulted in the ETPro Telemetry edition.
 
 The ETPro Telemetry edition embraces our vision that sharing knowledge leads to better products.
 
-When you allow your OPNsense system to share anonymized information about detected threats - the alerts -
+When you allow your HWasly system to share anonymized information about detected threats - the alerts -
 you are able to use the ETPro ruleset free of charge.

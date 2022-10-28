@@ -1,0 +1,11 @@
+{% if helpers.exists('HWasly.dnscryptproxy.general.enabled') and HWasly.dnscryptproxy.general.enabled == '1' %}
+
+{% if helpers.exists('HWasly.dnscryptproxy.whitelist.whitelists.whitelist') %}
+{%   for whitelist_list in helpers.toList('HWasly.dnscryptproxy.whitelist.whitelists.whitelist') %}
+{%     if whitelist_list.enabled == '1' %}
+{{ whitelist_list.name }}
+{%     endif %}
+{%   endfor %}
+{% endif %}
+
+{% endif %}

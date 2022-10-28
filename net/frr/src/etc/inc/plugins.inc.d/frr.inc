@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2018 Franco Fichtner <franco@hwasly.org>
  * Copyright (C) 2017 Fabian Franz
  * All rights reserved.
  *
@@ -29,20 +29,20 @@
 
 function frr_enabled()
 {
-    $model = new \OPNsense\Quagga\General();
+    $model = new \HWasly\Quagga\General();
     return (string)$model->enabled == '1';
 }
 
 function frr_carp_enabled()
 {
-    $model = new \OPNsense\Quagga\General();
+    $model = new \HWasly\Quagga\General();
     return (string)$model->enabled == '1' &&
         (string)$model->enablecarp == '1';
 }
 
 function frr_firewall($fw)
 {
-    $ospf = new \OPNsense\Quagga\OSPF();
+    $ospf = new \HWasly\Quagga\OSPF();
 
     if ((string)$ospf->enabled == '1') {
         foreach ($ospf->networks->network->iterateItems() as $network) {
@@ -140,7 +140,7 @@ function frr_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'quagga';
-    $result['section'] = 'OPNsense.quagga';
+    $result['section'] = 'HWasly.quagga';
     $result['description'] = gettext('FRR');
     $result['services'] = ['frr'];
     return array($result);

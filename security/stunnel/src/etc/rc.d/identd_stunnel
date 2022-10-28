@@ -11,7 +11,7 @@
 
 name=identd_stunnel
 rcvar=identd_stunnel_enable
-command=/usr/local/opnsense/scripts/stunnel/identd_stunnel.py
+command=/usr/local/hwasly/scripts/stunnel/identd_stunnel.py
 command_interpreter=/usr/local/bin/python3
 pidfile="/var/run/${name}.pid"
 load_rc_config $name

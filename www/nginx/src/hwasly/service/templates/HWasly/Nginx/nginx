@@ -1,0 +1,2 @@
+nginx_setup="/usr/local/hwasly/scripts/nginx/setup.php"
+nginx_enable="YES"

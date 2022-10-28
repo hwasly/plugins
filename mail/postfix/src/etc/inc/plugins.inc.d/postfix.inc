@@ -32,7 +32,7 @@ function postfix_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['postfix']['general']['enabled']) && $config['OPNsense']['postfix']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['postfix']['general']['enabled']) && $config['HWasly']['postfix']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('Postfix'),
             'configd' => array(
@@ -61,7 +61,7 @@ function postfix_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'postfix';
-    $result['section'] = 'OPNsense.postfix';
+    $result['section'] = 'HWasly.postfix';
     $result['description'] = gettext('Postfix');
     return array($result);
 }

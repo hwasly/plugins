@@ -27,10 +27,10 @@
 */
 
 /**
- * Function to register the plugin's service with OPNsense.
+ * Function to register the plugin's service with HWasly.
  *
  * This adds the service to the System: Diagnostics: Services page at
- * http://<opnsense>/status_services.php
+ * http://<hwasly>/status_services.php
  *
  * The suffix "_services" allows this function to be picked up by
  * etc/inc/plugins.inc:plugins_services() and be included in the
@@ -45,7 +45,7 @@ function sslh_services()
     $service = array();
 
     // Load in our settings to get the enabled state of the plugin.
-    $settings = new \OPNsense\Sslh\Settings();
+    $settings = new \HWasly\Sslh\Settings();
 
     // Only show the plugin if it's enabled.
     if (! ((string) $settings->enabled == '1')) {

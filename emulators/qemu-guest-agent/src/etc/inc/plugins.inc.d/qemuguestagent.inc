@@ -30,8 +30,8 @@ function qemuguestagent_enabled()
 {
     global $config;
 
-    return isset($config['OPNsense']['QemuGuestAgent']['general']['Enabled']) &&
-    $config['OPNsense']['QemuGuestAgent']['general']['Enabled'] == 1;
+    return isset($config['HWasly']['QemuGuestAgent']['general']['Enabled']) &&
+    $config['HWasly']['QemuGuestAgent']['general']['Enabled'] == 1;
 }
 
 /**
@@ -64,7 +64,7 @@ function qemuguestagent_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'qemuguestagent';
-    $result['section'] = 'OPNsense.QemuGuestAgent';
+    $result['section'] = 'HWasly.QemuGuestAgent';
     $result['description'] = gettext('QEMU Guest Agent');
     $result['services'] = ['qemu-ga'];
     return array($result);

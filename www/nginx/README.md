@@ -16,7 +16,7 @@ the files are built as ES6 modules,
 which are built using webpack.
 
 To install the frontend code, pleaste navigate into the
-www/nginx/src/opnsense/www/js/nginx directory and
+www/nginx/src/hwasly/www/js/nginx directory and
 run `npm install` to install the build tools.
 When all dependencies are installed, you should be able to run
 `node_modules/.bin/webpack-cli --config webpack.conf.js`
@@ -30,7 +30,7 @@ to `development` in the `webpack.conf.js`.
 ## Backend
 
 Most are standard but some endpoints support maps, which are not
-supported by OPNsense core.
+supported by HWasly core.
 
 You can detect them simply as they are doing more than just a mapping
 to the \*base methods.
@@ -42,8 +42,8 @@ to the \*base method.
 ## The nginx plugin as infrastucture
 
 The include pattern for nginx vhosts is
-`opnsense_<TYPE>_vhost_plugins/*.conf` which means that all files in the
-directory `/usr/local/etc/nginx/opnsense_<TYPE>_vhost_plugins`, which end
+`hwasly_<TYPE>_vhost_plugins/*.conf` which means that all files in the
+directory `/usr/local/etc/nginx/hwasly_<TYPE>_vhost_plugins`, which end
 with `.conf` are automatically included and served.
 Type can be http or stream.
 Please make sure your plugin creates a valid configuration because

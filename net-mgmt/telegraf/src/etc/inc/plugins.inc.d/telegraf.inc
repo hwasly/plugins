@@ -32,7 +32,7 @@ function telegraf_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['telegraf']['general']['enabled']) && $config['OPNsense']['telegraf']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['telegraf']['general']['enabled']) && $config['HWasly']['telegraf']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('telegraf agent'),
             'configd' => array(

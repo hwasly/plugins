@@ -52,7 +52,7 @@ function haproxy_services()
     global $config;
     $services = array();
 
-    if (isset($config['OPNsense']['HAProxy']['general']['enabled']) && $config['OPNsense']['HAProxy']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['HAProxy']['general']['enabled']) && $config['HWasly']['HAProxy']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('HAProxy load balancer'),
             'configd' => array(
@@ -75,7 +75,7 @@ function haproxy_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'haproxy';
-    $result['section'] = 'OPNsense.HAProxy';
+    $result['section'] = 'HWasly.HAProxy';
     $result['description'] = gettext('HAProxy Load Balancer');
     $result['services'] = ['haproxy'];
     return array($result);

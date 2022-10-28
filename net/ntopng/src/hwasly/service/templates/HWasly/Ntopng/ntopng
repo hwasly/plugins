@@ -1,0 +1,7 @@
+{% if helpers.exists('HWasly.ntopng.general.enabled') and HWasly.ntopng.general.enabled == '1' %}
+ntopng_setup="/usr/local/hwasly/scripts/HWasly/Ntopng/setup.sh"
+ntopng_enable="YES"
+ntopng_flags="/usr/local/etc/ntopng.conf"
+{% else %}
+ntopng_enable="NO"
+{% endif %}

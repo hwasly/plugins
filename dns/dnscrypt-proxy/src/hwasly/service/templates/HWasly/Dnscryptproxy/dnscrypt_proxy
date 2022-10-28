@@ -1,0 +1,14 @@
+{% if helpers.exists('HWasly.dnscryptproxy.general.enabled') and HWasly.dnscryptproxy.general.enabled == '1' %}
+dnscrypt_proxy_setup="/usr/local/hwasly/scripts/HWasly/Dnscryptproxy/setup.sh"
+dnscrypt_proxy_enable="YES"
+{%   if helpers.exists('HWasly.dnscryptproxy.general.allowprivileged') and HWasly.dnscryptproxy.general.allowprivileged == '1' %}
+dnscrypt_proxy_suexec="YES"
+{%   endif %}
+{%   if helpers.exists('HWasly.dnscryptproxy.dnsbl.enabled') and HWasly.dnscryptproxy.dnsbl.enabled == '1' %}
+{%     if helpers.exists('HWasly.dnscryptproxy.dnsbl.type') and HWasly.dnscryptproxy.dnsbl.type != '' %}
+dnscrypt_proxy_dnsbl="{{ HWasly.dnscryptproxy.dnsbl.type }}"
+{%     endif %}
+{%   endif %}
+{% else %}
+dnscrypt_proxy_enable="NO"
+{% endif %}

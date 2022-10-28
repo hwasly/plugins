@@ -32,7 +32,7 @@ function zabbixproxy_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['zabbixproxy']['general']['enabled']) && $config['OPNsense']['zabbixproxy']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['zabbixproxy']['general']['enabled']) && $config['HWasly']['zabbixproxy']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('Zabbix Proxy'),
             'configd' => array(

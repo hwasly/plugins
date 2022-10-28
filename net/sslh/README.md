@@ -1,8 +1,8 @@
-# sslh plugin for OPNsense
+# sslh plugin for HWasly
 
 ## Introduction
 
-This is a plugin for OPNsense firewall which provides a front-end UI for managing `SSLH`.
+This is a plugin for HWasly firewall which provides a front-end UI for managing `SSLH`.
 
 This plugin is designed for v`1.21c`, but may function with later versions.
 
@@ -24,7 +24,7 @@ This plugin, currently support only basic features like:
 
 ## Operation
 
-The plugin can be managed from Services -> SSLH in the OPNsense UI.
+The plugin can be managed from Services -> SSLH in the HWasly UI.
 
 To begin, enable SSLH, define at least one listen address, and define a desired target protocol.
 

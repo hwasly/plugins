@@ -1,6 +1,6 @@
 ### APU LED Plugin ###
 
-#### LED control for PC Engines APU platform OPNsense plugin ####
+#### LED control for PC Engines APU platform HWasly plugin ####
 
 **Left -> Right**
 LED1|LED2|LED3

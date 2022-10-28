@@ -29,7 +29,7 @@
 function node_exporter_services()
 {
     $services = array();
-    $mdlGeneral = new \OPNsense\NodeExporter\General();
+    $mdlGeneral = new \HWasly\NodeExporter\General();
 
     if ($mdlGeneral->enabled->__toString() == "0") {
         return $services;

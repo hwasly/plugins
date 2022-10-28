@@ -28,7 +28,7 @@
 
 function ntopng_enabled()
 {
-    $model = new \OPNsense\Ntopng\General();
+    $model = new \HWasly\Ntopng\General();
     return (string)$model->enabled == '1';
 }
 

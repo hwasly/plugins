@@ -239,7 +239,7 @@ include("head.inc");
                 $(".type_default").show();
                 break;
           }
-          $(window).resize(); // force zebra re-stripe (opnsense_standard_table_form)
+          $(window).resize(); // force zebra re-stripe (hwasly_standard_table_form)
       });
       $("#type").change();
   });
@@ -253,7 +253,7 @@ include("head.inc");
           <div class="content-box">
             <form method="post" name="iform" id="iform">
               <div class="table-responsive">
-                <table class="table table-striped opnsense_standard_table_form">
+                <table class="table table-striped hwasly_standard_table_form">
                   <tr>
                     <td style="width:22%"><strong><?= gettext("Dynamic DNS client") ?></strong></td>
                     <td style="width:78%; text-align:right">

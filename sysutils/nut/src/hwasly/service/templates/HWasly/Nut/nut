@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.Nut.general.enable') and HWasly.Nut.general.enable == '1' %}
+nut_setup="/usr/local/hwasly/scripts/HWasly/Nut/setup.sh"
+nut_enable="YES"
+{% else %}
+nut_enable="NO"
+{% endif %}

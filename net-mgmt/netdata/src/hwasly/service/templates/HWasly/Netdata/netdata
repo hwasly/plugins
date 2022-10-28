@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.netdata.general.enabled') and HWasly.netdata.general.enabled == '1' %}
+netdata_setup="/usr/local/hwasly/scripts/HWasly/Netdata/setup.sh"
+netdata_enable="YES"
+{% else %}
+netdata_enable="NO"
+{% endif %}

@@ -1,8 +1,8 @@
-About the OPNsense plugins
+About the HWasly plugins
 ==========================
 
 The plugins collection offers users and developers a way to quickly
-build additions for OPNsense that can be optionally installed.  As
+build additions for HWasly that can be optionally installed.  As
 soon as they are upstreamed they will become available to everyone
 through the firmware GUI pages.
 
@@ -19,11 +19,11 @@ Plugins can do the following:
 * Additional themes for the web GUI
 
 Now we need your help to enrich the plugins.  Feel free to contact us
-at project AT opnsense DOT org or open GitHub issue to get in touch.
+at project AT hwasly DOT org or open GitHub issue to get in touch.
 
 
 Stay safe,
-Your OPNsense team
+Your HWasly team
 
 A list of currently available plugins
 =====================================
@@ -39,7 +39,7 @@ dns/ddclient -- Dynamic DNS client
 dns/dnscrypt-proxy -- Flexible DNS proxy supporting DNSCrypt and DoH
 dns/dyndns -- Dynamic DNS Support
 dns/rfc2136 -- RFC-2136 Support
-emulators/qemu-guest-agent -- QEMU Guest Agent for OPNsense
+emulators/qemu-guest-agent -- QEMU Guest Agent for HWasly
 ftp/tftp -- TFTP server
 mail/postfix -- SMTP mail relay
 mail/rspamd -- Protect your network from spam
@@ -127,7 +127,7 @@ Commits for individual plugins should therefore be split into
 individual chunks for each src/ directory so that they can be
 reviewed separately and also be applied remotely.
 
-When an OPNsense release is built, the plugins are automatically
+When an HWasly release is built, the plugins are automatically
 added to the final package repository.
 
 The most useful Makefile targets and their purpose is described

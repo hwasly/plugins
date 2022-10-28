@@ -28,7 +28,7 @@
 
 function openconnect_enabled()
 {
-    $model = new \OPNsense\Openconnect\General();
+    $model = new \HWasly\Openconnect\General();
 
     return (string)$model->enabled == '1';
 }
@@ -76,7 +76,7 @@ function openconnect_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'openconnectvpn';
-    $result['section'] = 'OPNsense.openconnect';
+    $result['section'] = 'HWasly.openconnect';
     $result['description'] = gettext('OpenConnect');
     $result['services'] = ['openconnect'];
     return array($result);

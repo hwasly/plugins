@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.Rspamd.general.enabled') and HWasly.Rspamd.general.enabled == '1' %}
+rspamd_setup="/usr/local/hwasly/scripts/rspamd/setup.sh"
+rspamd_enable="YES"
+{% else %}
+rspamd_enable="NO"
+{% endif %}

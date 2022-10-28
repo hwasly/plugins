@@ -3,9 +3,9 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: © 2021 CrowdSec <info@crowdsec.net>
 
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Alias;
-use OPNsense\Firewall\Plugin;
+use HWasly\Core\Config;
+use HWasly\Firewall\Alias;
+use HWasly\Firewall\Plugin;
 
 function add_alias_if_not_exist($name, $description, $proto)
 {
@@ -28,7 +28,7 @@ function crowdsec_firewall(Plugin $fw)
 {
     global $config;
 
-    $general = $config['OPNsense']['crowdsec']['general'];
+    $general = $config['HWasly']['crowdsec']['general'];
 
     $bouncer_enabled = isset($general['firewall_bouncer_enabled']) && $general['firewall_bouncer_enabled'];
 
@@ -45,7 +45,7 @@ function crowdsec_firewall(Plugin $fw)
 
     add_alias_if_not_exist('crowdsec_blacklists', 'CrowdSec (IPv4)', 'IPv4');
 
-    // https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/library/OPNsense/Firewall/FilterRule.php
+    // https://github.com/hwasly/core/blob/master/src/hwasly/mvc/app/library/HWasly/Firewall/FilterRule.php
 
     $fw->registerFilterRule(
         1, /* priority */

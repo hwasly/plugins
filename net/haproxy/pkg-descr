@@ -268,7 +268,7 @@ Added:
 
 Changed:
 * server option "mode" is always visible, no longer requires "advanced mode" (#1208)
-* most dropdown fields finally have alphanumeric sorting (#687, opnsense/core#3251)
+* most dropdown fields finally have alphanumeric sorting (#687, hwasly/core#3251)
 * rules: align indentation of comments in haproxy.conf
 
 2.14

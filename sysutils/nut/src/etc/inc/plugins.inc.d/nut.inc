@@ -28,14 +28,14 @@
 
 function nut_enabled()
 {
-    $model = new \OPNsense\Nut\Nut();
+    $model = new \HWasly\Nut\Nut();
 
     return (string)$model->general->enable == '1';
 }
 
 function nut_netclient()
 {
-    $model = new \OPNsense\Nut\Nut();
+    $model = new \HWasly\Nut\Nut();
 
     return (string)$model->general->mode == 'netclient';
 }

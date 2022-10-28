@@ -28,7 +28,7 @@
 
 function tor_enabled()
 {
-    $model = new \OPNsense\Tor\General();
+    $model = new \HWasly\Tor\General();
     if ((string)$model->enabled == '1') {
         return true;
     }

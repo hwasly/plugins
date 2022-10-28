@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.shadowsocks.local.enabled') and HWasly.shadowsocks.local.enabled == '1' %}
+ss_local_enable="YES"
+ss_local_flags=""
+{% else %}
+ss_local_enable="NO"
+{% endif %}

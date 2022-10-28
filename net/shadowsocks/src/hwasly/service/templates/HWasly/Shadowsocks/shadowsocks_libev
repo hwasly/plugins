@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.shadowsocks.general.enabled') and HWasly.shadowsocks.general.enabled == '1' %}
+shadowsocks_libev_enable="YES"
+shadowsocks_libev_flags=""
+{% else %}
+shadowsocks_libev_enable="NO"
+{% endif %}

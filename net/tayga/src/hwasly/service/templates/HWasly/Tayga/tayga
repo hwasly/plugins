@@ -1,0 +1,17 @@
+{% if helpers.exists('HWasly.tayga.general.enabled') and HWasly.tayga.general.enabled == '1' %}
+tayga_script="/usr/local/hwasly/scripts/HWasly/Tayga/setup.sh"
+tayga_enable="YES"
+tayga_v4address={{ HWasly.tayga.general.v4address }}
+tayga_v4destination={{ HWasly.tayga.general.v4destination }}
+tayga_v4pool={{ HWasly.tayga.general.v4pool }}
+tayga_v6prefix={{ HWasly.tayga.general.v6prefix }}
+tayga_v6address={{ HWasly.tayga.general.v6address }}
+tayga_v6destination={{ HWasly.tayga.general.v6destination }}
+{% if helpers.exists('HWasly.tayga.general.v6routedisabled') and HWasly.tayga.general.v6routedisabled == '1' %}
+tayga_v6routedisabled="YES"
+{% else %}
+tayga_v6routedisabled="NO"
+{% endif %}
+{% else %}
+tayga_enable="NO"
+{% endif %}

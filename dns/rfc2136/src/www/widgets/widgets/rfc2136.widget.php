@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2017 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2017 Franco Fichtner <franco@hwasly.org>
  * Copyright (C) 2014-2016 Deciso B.V.
  * Copyright (C) 2008 Ermal Luçi
  * Copyright (C) 2013 Stanley P. Miller \ stan-qaz

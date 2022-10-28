@@ -4,7 +4,7 @@ The initial version of this plugin is going to cover only the most basic of sett
 
 ## Configuration
 
-For configuration, this plugin utilizes the configuration file to set settings. It has more options, and parity for all settings at the command line that are needed to be used in OPNsense. I didn't want to go as far as manipulating the startup script's command execution to inject command line options.
+For configuration, this plugin utilizes the configuration file to set settings. It has more options, and parity for all settings at the command line that are needed to be used in HWasly. I didn't want to go as far as manipulating the startup script's command execution to inject command line options.
 
 Most settings are available through the configuration file. A sample is provided through the FreeBSD ports installation:
 
@@ -65,7 +65,7 @@ Here are some non-configuration options which have representation in the model:
 
 Most settings have defaults set within the application itself, so setting defaults in the model would be redundant. Hints were provided where this occurred, and it happened that the HTML element supports a hint. The only settings with field defaults are the dropdown `OptionFields` which are set to required because selecting nothing for these would require some additional code in the Jinja template to accommodate a blank value. Since they're required, setting a default is best so the user doesn't have to interact with them. Especially since these fields are advanced and would be hidden.
 
-The configuration file has some functionality which isn't explained in the main documentation pages, but is included in some example configuration files (see `fork`, and `log_level` in sample above), and some in the source code. These settings are excluded for now, and need to be investigated further to see what OPNsense model data types would be best to use and how to visualize these settings in the UI.
+The configuration file has some functionality which isn't explained in the main documentation pages, but is included in some example configuration files (see `fork`, and `log_level` in sample above), and some in the source code. These settings are excluded for now, and need to be investigated further to see what HWasly model data types would be best to use and how to visualize these settings in the UI.
 
 Some advanced settings can be seen in the test configuration file in the source:
 
@@ -141,9 +141,9 @@ sslh
 
 This application may not have a function to output to a log file. Documentation indicates that `sslh` should be started manually, and run with the `foreground` option to get log messages clearly. Otherwise, logs are sent to the `syslog` facility. There is a configuration setting: `syslog_facility: "auth";` which might be used to change this behavior.
 
-On OPNsense 22.1 the logging goes to the `audit` facility, and looks something like this:
+On HWasly 22.1 the logging goes to the `audit` facility, and looks something like this:
 ```
-2021-12-29T23:41:07+00:00 OPNsense.localdomain sslh-fork[62839] 62839 - [meta sequenceId="43"] sslh-fork 1.21c started
+2021-12-29T23:41:07+00:00 HWasly.localdomain sslh-fork[62839] 62839 - [meta sequenceId="43"] sslh-fork 1.21c started
 ```
 
 It's a bit noisy with the "meta sequence" part, and the PID being displayed twice. Hopefully that will get cleaned up eventually. It should be possible to utilize the built-in log API to display these log entries, and utilize a hard coded filter to display only messages for `sslh`.

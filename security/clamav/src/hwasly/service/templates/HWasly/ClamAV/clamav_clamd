@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.clamav.general.enabled') and HWasly.clamav.general.enabled == '1' %}
+clamav_clamd_setup="/usr/local/hwasly/scripts/HWasly/ClamAV/setup.sh"
+clamav_clamd_enable="YES"
+{% else %}
+clamav_clamd_enable="NO"
+{% endif %}

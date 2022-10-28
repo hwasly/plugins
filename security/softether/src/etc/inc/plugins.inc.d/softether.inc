@@ -28,20 +28,20 @@
 
 function softether_enabled()
 {
-    $model = new \OPNsense\Softether\General();
+    $model = new \HWasly\Softether\General();
     return (string)$model->enabled == '1';
 }
 
 function softether_carp_enabled()
 {
-    $model = new \OPNsense\Softether\General();
+    $model = new \HWasly\Softether\General();
     return (string)$model->enabled == '1' &&
         (string)$model->enablecarp == '1';
 }
 
 function softether_carp_interfaces()
 {
-    $model = new \OPNsense\Softether\General();
+    $model = new \HWasly\Softether\General();
     return (string)$model->carpinterfaces;
 }
 

@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.freeradius.general.enabled') and HWasly.freeradius.general.enabled == '1' %}
+radiusd_setup="/usr/local/hwasly/scripts/Freeradius/setup.sh"
+radiusd_enable="YES"
+{% else %}
+radiusd_enable="NO"
+{% endif %}

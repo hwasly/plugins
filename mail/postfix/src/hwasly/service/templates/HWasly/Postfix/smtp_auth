@@ -1,0 +1,9 @@
+{% if helpers.exists('HWasly.postfix.general.enabled') and HWasly.postfix.general.enabled == '1' %}
+{%   if helpers.exists('HWasly.postfix.general.smtpauth_enabled') and HWasly.postfix.general.smtpauth_enabled == '1' %}
+{%     if helpers.exists('HWasly.postfix.general.smtpauth_user') and HWasly.postfix.general.smtpauth_user != '' %}
+{%       if helpers.exists('HWasly.postfix.general.smtpauth_password') and HWasly.postfix.general.smtpauth_password != '' %}
+{{ HWasly.postfix.general.relayhost }} {{ HWasly.postfix.general.smtpauth_user }}:{{ HWasly.postfix.general.smtpauth_password }}
+{%       endif %}
+{%     endif %}
+{%   endif %}
+{% endif %}

@@ -28,7 +28,7 @@
 
 function redis_enabled()
 {
-    $model = new \OPNsense\Redis\Redis();
+    $model = new \HWasly\Redis\Redis();
     if ((string)$model->general->enabled == '1') {
         return true;
     }

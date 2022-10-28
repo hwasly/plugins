@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.nrpe.general.enabled') and HWasly.nrpe.general.enabled == '1' %}
+nrpe3_setup="/usr/local/hwasly/scripts/HWasly/Nrpe/setup.sh"
+nrpe3_enable="YES"
+{% else %}
+nrpe3_enable="NO"
+{% endif %}

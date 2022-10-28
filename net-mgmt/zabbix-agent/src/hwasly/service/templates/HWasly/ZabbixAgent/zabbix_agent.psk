@@ -1,0 +1,5 @@
+{% if helpers.exists('HWasly.ZabbixAgent.settings.features.encryption') and HWasly.ZabbixAgent.settings.features.encryption != '' %}
+{%   if helpers.exists('HWasly.ZabbixAgent.settings.features.encryptionpsk') and HWasly.ZabbixAgent.settings.features.encryptionpsk != '' %}
+{{ HWasly.ZabbixAgent.settings.features.encryptionpsk }}
+{%   endif %}
+{% endif %}

@@ -28,7 +28,7 @@
 
 function wireguard_enabled()
 {
-    $model = new \OPNsense\Wireguard\General();
+    $model = new \HWasly\Wireguard\General();
     return (string)$model->enabled == '1';
 }
 
@@ -73,7 +73,7 @@ function wireguard_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'wireguard';
-    $result['section'] = 'OPNsense.wireguard';
+    $result['section'] = 'HWasly.wireguard';
     $result['description'] = gettext('WireGuard');
     $result['services'] = ['wireguard-go'];
     return array($result);

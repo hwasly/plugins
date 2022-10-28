@@ -1,0 +1,5 @@
+{% if helpers.exists('HWasly.Rspamd.general.enabled') and HWasly.Rspamd.general.enabled == '1' and helpers.exists('HWasly.Rspamd.multimap.whitelistsender') and HWasly.Rspamd.multimap.whitelistsender != '' %}
+{%   for sender in HWasly.Rspamd.multimap.whitelistsender.split(',') %}
+{{ sender }}
+{%   endfor %}
+{% endif %}

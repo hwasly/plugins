@@ -1,4 +1,4 @@
 The goal of the "grid_example" plugin is to showcase the capabilities
-of the OPNsense plugin framework in relation to the grid/table system.
+of the HWasly plugin framework in relation to the grid/table system.
 
-WWW: https://docs.opnsense.org/development/examples/using_grids.html
+WWW: https://docs.hwasly.org/development/examples/using_grids.html

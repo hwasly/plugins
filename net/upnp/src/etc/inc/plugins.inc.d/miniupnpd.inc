@@ -199,7 +199,7 @@ function miniupnpd_configure_do($verbose = false)
             $config_text .= "serial=" . strtoupper(substr(miniupnpd_uuid(), 0, 8)) . "\n";
 
             /* set model number */
-            $config_text .= "model_number=" . trim(shell_exec('opnsense-version -v')) . "\n";
+            $config_text .= "model_number=" . trim(shell_exec('hwasly-version -v')) . "\n";
 
             /* upnp access restrictions */
             foreach (miniupnpd_permuser_list() as $permuser) {

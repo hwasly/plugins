@@ -33,8 +33,8 @@ function clamav_services()
     $services = array();
 
     if (
-        isset($config['OPNsense']['clamav']['general']['enabled']) &&
-        $config['OPNsense']['clamav']['general']['enabled'] == 1
+        isset($config['HWasly']['clamav']['general']['enabled']) &&
+        $config['HWasly']['clamav']['general']['enabled'] == 1
     ) {
         $services[] = array(
             'description' => gettext('ClamAV Daemon'),
@@ -49,8 +49,8 @@ function clamav_services()
     }
 
     if (
-        isset($config['OPNsense']['clamav']['general']['fc_enabled']) &&
-        $config['OPNsense']['clamav']['general']['fc_enabled'] == 1
+        isset($config['HWasly']['clamav']['general']['fc_enabled']) &&
+        $config['HWasly']['clamav']['general']['fc_enabled'] == 1
     ) {
         $services[] = array(
             'description' => gettext('freshclam daemon'),

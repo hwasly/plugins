@@ -1,4 +1,4 @@
-Contributing to OPNsense
+Contributing to HWasly
 ========================
 
 Thanks for considering a pull request or issue report.  Below are a
@@ -19,7 +19,7 @@ When creating bug reports, please make sure you provide the following:
 * The last plugin version where the bug did not exist
 * The exact URL of the GUI page involved (if any)
 * A list of steps to replicate the bug
-* The current OPNsense version used
+* The current HWasly version used
 
 All issues reported will have to be triaged and prioritised.  As we
 are a small team and outside contributors we may not always have the
@@ -29,10 +29,10 @@ to fill in.
 Plugins can be almost anything not necessary tied to our core mission,
 so do not be afraid to ask.
 
-Feature requests that relate to core components of OPNsense can be provided
+Feature requests that relate to core components of HWasly can be provided
 using the core repository:
 
-https://github.com/opnsense/core/issues
+https://github.com/hwasly/core/issues
 
 Stale issues are timed out after several months of inactivity.
 

@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.maltrail.server.enabled') and HWasly.maltrail.server.enabled == '1' %}
+maltrailserver_setup="/usr/local/hwasly/scripts/HWasly/Maltrail/setup.sh"
+maltrailserver_enable="YES"
+{% else %}
+maltrailserver_enable="NO"
+{% endif %}

@@ -33,8 +33,8 @@ function cicap_services()
     $services = array();
 
     if (
-        isset($config['OPNsense']['cicap']['general']['enabled']) &&
-        $config['OPNsense']['cicap']['general']['enabled'] == 1
+        isset($config['HWasly']['cicap']['general']['enabled']) &&
+        $config['HWasly']['cicap']['general']['enabled'] == 1
     ) {
         $services[] = array(
             'description' => gettext('C-ICAP server'),

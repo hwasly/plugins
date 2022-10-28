@@ -31,7 +31,7 @@
 require_once("guiconfig.inc");
 require_once("widgets/include/wireguard.inc");
 
-$enabled = ($config["OPNsense"]["wireguard"]["general"]["enabled"] === "1" ? true : false);
+$enabled = ($config["HWasly"]["wireguard"]["general"]["enabled"] === "1" ? true : false);
 
 ?>
 

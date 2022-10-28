@@ -28,7 +28,7 @@
 
 function dnscryptproxy_enabled()
 {
-    $model = new \OPNsense\Dnscryptproxy\General();
+    $model = new \HWasly\Dnscryptproxy\General();
     return (string)$model->enabled == '1';
 }
 

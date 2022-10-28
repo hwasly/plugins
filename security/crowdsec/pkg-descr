@@ -53,5 +53,5 @@ Plugin Changelog
 
 0.0.5
 
-* fixed an issue that prevented the bouncer from banning IPs on opnsense
+* fixed an issue that prevented the bouncer from banning IPs on hwasly
 * fixed support for notification plugins

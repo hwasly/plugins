@@ -1,0 +1,5 @@
+{% if helpers.exists('HWasly.Nut.general.enable') and HWasly.Nut.general.enable == '1' %}
+nut_upsmon_enable="YES"
+{% else %}
+nut_upsmon_enable="NO"
+{% endif %}

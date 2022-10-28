@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.netsnmp.general.enabled') and HWasly.netsnmp.general.enabled == '1' %}
+snmpd_setup="/usr/local/hwasly/scripts/HWasly/Netsnmp/setup.sh"
+snmpd_enable="YES"
+{% else %}
+snmpd_enable="NO"
+{% endif %}

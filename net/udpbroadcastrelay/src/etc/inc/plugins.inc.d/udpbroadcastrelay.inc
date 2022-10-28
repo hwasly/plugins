@@ -28,7 +28,7 @@
 
 function udpbroadcastrelay_enabled()
 {
-    $model = new \OPNsense\UDPBroadcastRelay\UDPBroadcastRelay();
+    $model = new \HWasly\UDPBroadcastRelay\UDPBroadcastRelay();
 
     foreach ($model->udpbroadcastrelay->iterateItems() as $server) {
         if ($server->enabled == '1') {
@@ -54,7 +54,7 @@ function udpbroadcastrelay_services()
         return $services;
     }
 
-    $model = new \OPNsense\UDPBroadcastRelay\UDPBroadcastRelay();
+    $model = new \HWasly\UDPBroadcastRelay\UDPBroadcastRelay();
 
     foreach ($model->udpbroadcastrelay->iterateItems() as $server) {
         if ($server->enabled == '0') {

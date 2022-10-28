@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.cicap.general.enabled') and HWasly.cicap.general.enabled == '1' %}
+c_icap_setup="/usr/local/hwasly/scripts/HWasly/CICAP/setup.sh"
+c_icap_enable="YES"
+{% else %}
+c_icap_enable="NO"
+{% endif %}

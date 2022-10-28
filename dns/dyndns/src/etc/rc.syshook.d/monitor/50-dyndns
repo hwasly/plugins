@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2019 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2019 Franco Fichtner <franco@hwasly.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -33,6 +33,6 @@ if [ -z "${GATEWAY}" ]; then
 fi
 
 echo -n "Reloading DynDNS for ${GATEWAY}: "
-/usr/local/opnsense/service/configd_ctl.py dyndns reload ${GATEWAY}
+/usr/local/hwasly/service/configd_ctl.py dyndns reload ${GATEWAY}
 
 exit 0

@@ -1,0 +1,9 @@
+{% if helpers.exists('HWasly.softether.general.enabled') and HWasly.softether.general.enabled == '1' %}
+softether_server_setup="/usr/local/hwasly/scripts/HWasly/Softether/setup.sh"
+softether_server_enable="YES"
+{% if helpers.exists('HWasly.softether.general.enablecarp') and HWasly.softether.general.enablecarp == '1' %}
+required_files="/var/run/softether/CARP_MASTER"
+{% endif %}
+{% else %}
+softether_server_enable="NO"
+{% endif %}

@@ -6,4 +6,4 @@
 # If we do that in setup.sh, the file already exists with bad permissions.
 
 # shellcheck disable=SC2174
-mkdir -p -m 0700 /usr/local/etc/crowdsec/opnsense
+mkdir -p -m 0700 /usr/local/etc/crowdsec/hwasly

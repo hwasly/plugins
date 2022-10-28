@@ -32,7 +32,7 @@ function collectd_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['collectd']['general']['enabled']) && $config['OPNsense']['collectd']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['collectd']['general']['enabled']) && $config['HWasly']['collectd']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('collectd daemon'),
             'configd' => array(

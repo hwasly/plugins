@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.postfix.general.enabled') and HWasly.postfix.general.enabled == '1' %}
+postfix_setup="/usr/local/hwasly/scripts/HWasly/Postfix/setup.sh"
+postfix_enable="YES"
+{% else %}
+postfix_enable="NO"
+{% endif %}

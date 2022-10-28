@@ -1,6 +1,6 @@
 # ETPRO telemetry edition
 
-Telemetry tools, depends on `rule-updater.config`, which contains the device registration number provided by OPNsense.
+Telemetry tools, depends on `rule-updater.config`, which contains the device registration number provided by HWasly.
 
 for example.
 ```
@@ -13,13 +13,13 @@ The scripts will be scheduled automatically using a cron job after installation 
 
 General
 ----------------
-All scripts described in the readme are available in the directory `src/opnsense/scripts/etpro_telemetry`
+All scripts described in the readme are available in the directory `src/hwasly/scripts/etpro_telemetry`
 
 
 Requirements
 --------------
 
-Install requirements (default available on OPNsense)
+Install requirements (default available on HWasly)
 
 ```
 pip install -r requires.txt

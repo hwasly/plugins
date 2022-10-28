@@ -25,8 +25,8 @@ rm -f /etc/rc.conf.d/crowdsec \
 @include_once("certs.inc");
 @include_once("util.inc");
 
-use OPNsense\Firewall\Alias;
-use OPNsense\Core\Config;
+use HWasly\Firewall\Alias;
+use HWasly\Core\Config;
 
 function removeAlias($name)
 {

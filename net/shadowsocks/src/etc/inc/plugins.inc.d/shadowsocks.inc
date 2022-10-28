@@ -32,7 +32,7 @@ function shadowsocks_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['shadowsocks']['general']['enabled']) && $config['OPNsense']['shadowsocks']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['shadowsocks']['general']['enabled']) && $config['HWasly']['shadowsocks']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('shadowsocks daemon'),
             'configd' => array(
@@ -45,7 +45,7 @@ function shadowsocks_services()
         );
     }
 
-    if (isset($config['OPNsense']['shadowsocks']['local']['enabled']) && $config['OPNsense']['shadowsocks']['local']['enabled'] == 1) {
+    if (isset($config['HWasly']['shadowsocks']['local']['enabled']) && $config['HWasly']['shadowsocks']['local']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('shadowsockslocal daemon'),
             'configd' => array(

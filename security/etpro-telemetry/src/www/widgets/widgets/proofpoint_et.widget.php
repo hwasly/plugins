@@ -89,7 +89,7 @@
       <tr>
           <td colspan="2">
             <?=gettext("For more information, please visit");?>
-            <a target="_blank" rel="noopener noreferrer" href="https://docs.opnsense.org/manual/etpro_telemetry.html">docs.opnsense.org</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://docs.hwasly.org/manual/etpro_telemetry.html">docs.hwasly.org</a>
           </td>
       </tr>
   </tfoot>

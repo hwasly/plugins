@@ -32,7 +32,7 @@ function freeradius_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['freeradius']['general']['enabled']) && $config['OPNsense']['freeradius']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['freeradius']['general']['enabled']) && $config['HWasly']['freeradius']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('FreeRADIUS'),
             'configd' => array(
@@ -52,7 +52,7 @@ function freeradius_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'freeradius';
-    $result['section'] = 'OPNsense.freeradius';
+    $result['section'] = 'HWasly.freeradius';
     $result['description'] = gettext('Freeradius');
     $result['services'] = ["freeradius"];
     return array($result);

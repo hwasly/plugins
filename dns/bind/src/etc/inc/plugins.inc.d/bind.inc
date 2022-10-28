@@ -28,7 +28,7 @@
 
 function bind_enabled()
 {
-    $model = new \OPNsense\Bind\General();
+    $model = new \HWasly\Bind\General();
     return (string)$model->enabled == '1';
 }
 
@@ -58,7 +58,7 @@ function bind_xmlrpc_sync()
 {
     $result = array();
     $result['id'] = 'bind';
-    $result['section'] = 'OPNsense.bind';
+    $result['section'] = 'HWasly.bind';
     $result['description'] = gettext('BIND domain name service');
     $result['services'] = ['named'];
     return array($result);

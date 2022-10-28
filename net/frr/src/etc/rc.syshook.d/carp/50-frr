@@ -2,7 +2,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2018 Franco Fichtner <franco@hwasly.org>
  * Copyright (C) 2004 Scott Ullrich <sullrich@gmail.com>
  * All rights reserved.
  *
@@ -58,5 +58,5 @@ if (frr_carp_enabled()) {
 } elseif (frr_enabled()) {
     // XXX: when not toggling between active and disabled, pass event so underlaying protocols can
     //      determine which actions to perform when reaching a certain state.
-    shell_exec('/usr/local/opnsense/scripts/frr/carp_event_handler');
+    shell_exec('/usr/local/hwasly/scripts/frr/carp_event_handler');
 }

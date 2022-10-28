@@ -1,0 +1,9 @@
+{% if helpers.exists('HWasly.postfix.general.enabled') and HWasly.postfix.general.enabled == '1' %}
+{%   if helpers.exists('HWasly.postfix.domain.domains.domain') %}
+{%     for domain in helpers.toList('HWasly.postfix.domain.domains.domain') %}
+{%       if domain.enabled == '1' %}
+{{ domain.domainname }} smtp:{{ domain.destination }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}

@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2015-2021 Franco Fichtner <franco@hwasly.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -43,7 +43,7 @@ PLUGIN_DESC=		pkg-descr
 PLUGIN_SCRIPTS=		+PRE_INSTALL +POST_INSTALL \
 			+PRE_DEINSTALL +POST_DEINSTALL
 
-PLUGIN_WWW?=		https://opnsense.org/
+PLUGIN_WWW?=		https://hwasly.org/
 PLUGIN_REVISION?=	0
 
 PLUGIN_REQUIRES=	PLUGIN_NAME PLUGIN_VERSION PLUGIN_COMMENT \
@@ -104,7 +104,7 @@ PLUGIN_PKGVERSION=	${PLUGIN_VERSION}
 manifest: check
 	@echo "name: ${PLUGIN_PKGNAME}"
 	@echo "version: \"${PLUGIN_PKGVERSION}\""
-	@echo "origin: opnsense/${PLUGIN_PKGNAME}"
+	@echo "origin: hwasly/${PLUGIN_PKGNAME}"
 	@echo "comment: \"${PLUGIN_COMMENT}\""
 	@echo "maintainer: \"${PLUGIN_MAINTAINER}\""
 	@echo "categories: [ \"${.CURDIR:S/\// /g:[-2]}\" ]"
@@ -148,7 +148,7 @@ scripts-auto:
 			done; \
 		done; \
 	fi
-	@if [ -d ${.CURDIR}/src/opnsense/service/conf/actions.d ]; then \
+	@if [ -d ${.CURDIR}/src/hwasly/service/conf/actions.d ]; then \
 		cat ${TEMPLATESDIR}/actions.d >> ${DESTDIR}/+POST_INSTALL; \
 	fi
 	@if [ -d ${.CURDIR}/src/etc/rc.loader.d ]; then \
@@ -157,8 +157,8 @@ scripts-auto:
 			    ${DESTDIR}/$${SCRIPT}; \
 		done; \
 	fi
-	@if [ -d ${.CURDIR}/src/opnsense/mvc/app/models ]; then \
-		for FILE in $$(cd ${.CURDIR}/src/opnsense/mvc/app/models && \
+	@if [ -d ${.CURDIR}/src/hwasly/mvc/app/models ]; then \
+		for FILE in $$(cd ${.CURDIR}/src/hwasly/mvc/app/models && \
 		    find -s . -depth 2 -type d); do \
 			cat ${TEMPLATESDIR}/models | \
 			    sed "s:%%ARG%%:$${FILE#./}:g" >> \
@@ -170,8 +170,8 @@ scripts-auto:
 			    ${DESTDIR}/$${SCRIPT}; \
 		done; \
 	fi
-	@if [ -d ${.CURDIR}/src/opnsense/service/templates ]; then \
-		for FILE in $$(cd ${.CURDIR}/src/opnsense/service/templates && \
+	@if [ -d ${.CURDIR}/src/hwasly/service/templates ]; then \
+		for FILE in $$(cd ${.CURDIR}/src/hwasly/service/templates && \
 		    find -s . -depth 2 -type d); do \
 			cat ${TEMPLATESDIR}/templates | \
 			    sed "s:%%ARG%%:$${FILE#./}:g" >> \
@@ -194,7 +194,7 @@ scripts-post:
 	done
 
 install: check
-	@mkdir -p ${DESTDIR}${LOCALBASE}/opnsense/version
+	@mkdir -p ${DESTDIR}${LOCALBASE}/hwasly/version
 	@(cd ${.CURDIR}/src; find * -type f) | while read FILE; do \
 		tar -C ${.CURDIR}/src -cpf - $${FILE} | \
 		    tar -C ${DESTDIR}${LOCALBASE} -xpf -; \
@@ -203,7 +203,7 @@ install: check
 			mv "${DESTDIR}${LOCALBASE}/$${FILE}" "${DESTDIR}${LOCALBASE}/$${FILE%%.in}"; \
 		fi; \
 	done
-	@cat ${TEMPLATESDIR}/version | sed ${SED_REPLACE} > "${DESTDIR}${LOCALBASE}/opnsense/version/${PLUGIN_NAME}"
+	@cat ${TEMPLATESDIR}/version | sed ${SED_REPLACE} > "${DESTDIR}${LOCALBASE}/hwasly/version/${PLUGIN_NAME}"
 
 plist: check
 	@(cd ${.CURDIR}/src; find * -type f) | while read FILE; do \
@@ -211,7 +211,7 @@ plist: check
 		FILE="$${FILE%%.in}"; \
 		echo ${LOCALBASE}/$${FILE}; \
 	done
-	@echo "${LOCALBASE}/opnsense/version/${PLUGIN_NAME}"
+	@echo "${LOCALBASE}/hwasly/version/${PLUGIN_NAME}"
 
 description: check
 	@if [ -f ${.CURDIR}/${PLUGIN_DESC} ]; then \
@@ -258,7 +258,7 @@ package: check
 	@${MAKE} DESTDIR=${WRKSRC} install
 	@echo " done"
 	@echo ">>> Generated version info for ${PLUGIN_PKGNAME}-${PLUGIN_PKGVERSION}:"
-	@cat ${WRKSRC}/usr/local/opnsense/version/${PLUGIN_NAME}
+	@cat ${WRKSRC}/usr/local/hwasly/version/${PLUGIN_NAME}
 	@echo ">>> Packaging files for ${PLUGIN_PKGNAME}-${PLUGIN_PKGVERSION}:"
 	@${PKG} create -v -m ${WRKSRC} -r ${WRKSRC} \
 	    -p ${WRKSRC}/plist -o ${PKGDIR}
@@ -306,7 +306,7 @@ lint-xml:
 	    -name "*.xml" -type f -print0 | xargs -0 -n1 xmllint --noout
 
 lint-exec: check
-.for DIR in ${.CURDIR}/src/opnsense/scripts ${.CURDIR}/src/etc/rc.d ${.CURDIR}/src/etc/rc.syshook.d
+.for DIR in ${.CURDIR}/src/hwasly/scripts ${.CURDIR}/src/etc/rc.d ${.CURDIR}/src/etc/rc.syshook.d
 .if exists(${DIR})
 	@find ${DIR} -type f ! -name "*.xml" -print0 | \
 	    xargs -0 -t -n1 test -x || \
@@ -347,7 +347,7 @@ sweep: check
 revision:
 	@${SCRIPTSDIR}/revbump.sh ${.CURDIR}
 
-STYLEDIRS?=	src/etc/inc src/opnsense
+STYLEDIRS?=	src/etc/inc src/hwasly
 
 style: check
 	@: > ${.CURDIR}/.style.out
@@ -379,10 +379,10 @@ style-python: check
 	fi
 
 test: check
-	@if [ -d ${.CURDIR}/src/opnsense/mvc/tests ]; then \
-		cd /usr/local/opnsense/mvc/tests && \
+	@if [ -d ${.CURDIR}/src/hwasly/mvc/tests ]; then \
+		cd /usr/local/hwasly/mvc/tests && \
 		    phpunit --configuration PHPunit.xml \
-		    ${.CURDIR}/src/opnsense/mvc/tests; \
+		    ${.CURDIR}/src/hwasly/mvc/tests; \
 	fi
 
 .PHONY:	check

@@ -30,7 +30,7 @@ function puppetagent_enabled()
 {
     global $config;
 
-    return !empty($config['OPNsense']['puppetagent']['general']['Enabled']);
+    return !empty($config['HWasly']['puppetagent']['general']['Enabled']);
 }
 
 /**

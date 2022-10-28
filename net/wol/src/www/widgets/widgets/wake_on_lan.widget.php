@@ -30,7 +30,7 @@ require_once("guiconfig.inc");
 require_once("widgets/include/wake_on_lan.inc");
 require_once("interfaces.inc");
 
-use OPNsense\Wol\Wol;
+use HWasly\Wol\Wol;
 $wol = new Wol();
 ?>
 <table class="table table-striped table-condensed">

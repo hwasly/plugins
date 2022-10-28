@@ -667,9 +667,9 @@ class updatedns
             case 'gandi-livedns':
                 /*
                 * https://github.com/vizion8-dan
-                * Tested on OPNsense 20.1.8_1-amd64 - IPv4 (A)
-                * dnsHost ("Hostname" field in OPNsense) should be the 2nd-level domain ("example.org")
-                * dnsUser ("Username" field in OPNsense) should be the subdomain / A-record ("myrecord" in 2nd-level domain)
+                * Tested on HWasly 20.1.8_1-amd64 - IPv4 (A)
+                * dnsHost ("Hostname" field in HWasly) should be the 2nd-level domain ("example.org")
+                * dnsUser ("Username" field in HWasly) should be the subdomain / A-record ("myrecord" in 2nd-level domain)
                 * dnsPass should be the Gandi-API key
                 */
                 $server = "https://dns.api.gandi.net/api/v5/domains/" . $this->_dnsHost . "/records/" . $this->_dnsUser . "/A";

@@ -1,0 +1,6 @@
+{% if helpers.exists('HWasly.siproxd.general.enabled') and HWasly.siproxd.general.enabled == '1' %}
+siproxd_setup="/usr/local/hwasly/scripts/HWasly/Siproxd/setup.sh"
+siproxd_enable="YES"
+{% else %}
+siproxd_enable="NO"
+{% endif %}

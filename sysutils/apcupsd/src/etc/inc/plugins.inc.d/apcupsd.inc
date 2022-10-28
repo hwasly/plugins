@@ -41,8 +41,8 @@ function apcupsd_services()
     $services = array();
 
     if (
-        isset($config['OPNsense']['apcupsd']['general']['Enabled']) &&
-        $config['OPNsense']['apcupsd']['general']['Enabled'] == 1
+        isset($config['HWasly']['apcupsd']['general']['Enabled']) &&
+        $config['HWasly']['apcupsd']['general']['Enabled'] == 1
     ) {
         $services[] = array(
             'description' => gettext('APC UPS Daemon'),
@@ -68,7 +68,7 @@ function apcupsd_xmlrpc_sync()
 
     $result[] = array(
         'description' => gettext('APC UPS Daemon'),
-        'section' => 'OPNsense.apcupsd',
+        'section' => 'HWasly.apcupsd',
         'id' => 'apcupsd',
         'services' => ["apcupsd"],
     );

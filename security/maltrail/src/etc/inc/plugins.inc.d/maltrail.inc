@@ -32,7 +32,7 @@ function maltrail_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['maltrail']['general']['enabled']) && $config['OPNsense']['maltrail']['general']['enabled'] == 1) {
+    if (isset($config['HWasly']['maltrail']['general']['enabled']) && $config['HWasly']['maltrail']['general']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('maltrail sensor'),
             'configd' => array(
@@ -45,7 +45,7 @@ function maltrail_services()
         );
     }
 
-    if (isset($config['OPNsense']['maltrail']['server']['enabled']) && $config['OPNsense']['maltrail']['server']['enabled'] == 1) {
+    if (isset($config['HWasly']['maltrail']['server']['enabled']) && $config['HWasly']['maltrail']['server']['enabled'] == 1) {
         $services[] = array(
             'description' => gettext('maltrail server'),
             'configd' => array(

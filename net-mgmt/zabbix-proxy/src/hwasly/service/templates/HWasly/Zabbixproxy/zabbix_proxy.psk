@@ -1,0 +1,5 @@
+{% if helpers.exists('HWasly.zabbixproxy.general.enabled') and HWasly.zabbixproxy.general.enabled == '1' %}
+{% if helpers.exists('HWasly.zabbixproxy.general.encryption') and HWasly.zabbixproxy.general.encryption == '1' %}
+{{ HWasly.zabbixproxy.general.encryptionpsk }}
+{% endif %}
+{% endif %}

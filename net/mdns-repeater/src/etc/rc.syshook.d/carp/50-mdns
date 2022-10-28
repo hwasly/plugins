@@ -32,7 +32,7 @@ require_once("util.inc");
 require_once('interfaces.inc');
 require_once("plugins.inc.d/mdnsrepeater.inc");
 
-$mdns_repeater = new \OPNsense\MDNSRepeater\MDNSRepeater();
+$mdns_repeater = new \HWasly\MDNSRepeater\MDNSRepeater();
 $mdns_repeater_carp_enabled =
     (string)$mdns_repeater->enabled == '1' &&
     (string)$mdns_repeater->enablecarp == '1';
@@ -59,7 +59,7 @@ if ($mdns_repeater_carp_enabled) {
         exit(0);
     }
 
-    $backend = new \OPNsense\Core\Backend();
+    $backend = new \HWasly\Core\Backend();
 
     switch ($type) {
         case 'MASTER':
